@@ -1,0 +1,57 @@
+.faund_panel, .faund_panel_close{
+    position: fixed;
+    box-sizing:border-box;
+    width: 20vw;
+    height: 95%;
+    margin: 0;
+    padding:10px 0;
+    background-color:rgba(16, 177, 240, 0.301);
+    border-radius:10px 0px 0px 10px;
+    transition: .5s ease-in-out;
+    padding: 0;
+}
+.faund_panel{
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    &__message{
+        width: 80%;
+        margin: 2px auto;
+        list-style-type: none;
+        background-color:rgba(255, 255, 255, 0.295);
+        &:first-child{
+            border-radius: 10px 10px 0px 0px;
+        }
+        &:nth-last-child(-n+1){
+            border-radius: 0 0 10px 10px;
+        }
+    }
+  &_close{
+    top: 50%;
+    right: -19.5%;
+    transform: translate(0%, -50%);
+    border-radius:10px 0px 0px 10px;
+  }
+  &__btn{
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    height: 100%;
+    cursor: pointer;
+    background-color:rgb(255, 251, 0);
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color:rgb(255, 255, 255);
+    -webkit-text-stroke: .1em rgba(20, 27, 87, 0.308);
+    transition: .3s;
+    &:hover{
+        color:rgb(219, 3, 3);
+    }
+  }
+}
+
