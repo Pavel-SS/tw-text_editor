@@ -1,30 +1,28 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable react/button-has-type */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable no-plusplus */
+
 import React, { useContext } from 'react';
+
 import { Context } from '../context';
-import { unique } from '../utils/unique';
 import s from '../scss/listHash.module.scss';
+import { unique } from '../utils/unique';
 
 /**
  * Компонента уникальных hash-тэгов
  * @returns ['#tag','#string', ...ect]
  */
-// eslint-disable-next-line react/function-component-definition
-export const ListHash = () => {
-  const {
-    listHash,
-    setListHash,
-    setHashFound,
-    messages,
-  } = useContext(Context);
 
-  const delHash = (ind) => {
-    setListHash(listHash.filter((e, i) => i !== ind));
+export const ListHash = () => {
+  const { listHash, setListHash, setHashFound, messages } = useContext(Context);
+
+  const delHash = (ind: number) => {
+    setListHash(listHash.filter((e: string, i: number) => i !== ind));
   };
 
-  const clickHash = (hashlist, e) => {
+  const clickHash = (hashlist: any, e: string) => {
     const arrayFaundMessage = [];
-    // eslint-disable-next-line no-plusplus
+
     for (let i = 0; i < hashlist.length; i++) {
       if (hashlist[i].hash && hashlist[i].hash.includes(e)) {
         arrayFaundMessage.push(hashlist[i]);
@@ -35,24 +33,22 @@ export const ListHash = () => {
 
   return (
     <ul className={s.list_hash}>
-      {unique(listHash).map((hash, index) => (
-        // eslint-disable-next-line react/no-array-index-key
+      {unique(listHash).map((hash: string, index: number) => (
         <li className={s.list_hash__item} key={index}>
           <button
+            type="button"
             value={hash}
             className={s.list_hash__item_search}
-            onClick={(e) => {
-              clickHash(messages, e.target.value);
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+              clickHash(messages, e.currentTarget.value);
             }}
           >
-            {
-                            hash
-                        }
+            {hash}
           </button>
           <button
+            type="button"
             className={s.list_hash__item_close}
-                        // eslint-disable-next-line react/jsx-indent-props
-                        onClick={() => delHash(index)}
+            onClick={() => delHash(index)}
           >
             ✖
           </button>
