@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tw-text_editor/static/css/main.c9fdb49e.css",
+    "main.js": "/tw-text_editor/static/js/main.03daa1c0.js",
+    "index.html": "/tw-text_editor/index.html",
+    "main.c9fdb49e.css.map": "/tw-text_editor/static/css/main.c9fdb49e.css.map",
+    "main.03daa1c0.js.map": "/tw-text_editor/static/js/main.03daa1c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9fdb49e.css",
+    "static/js/main.03daa1c0.js"
+  ]
+}
